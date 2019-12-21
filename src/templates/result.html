@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Result Page</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+        <div>
+            <a href="http://localhost:5000/">回到首页</a>
+        </div>
+        <div id="box">
+            {% if num_docs <= 0 %}
+                <p><font size="5">没有对应搭配</font></p><br>
+            {% else %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>编号</th>
+                          <th>搭配</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for doc in docs %}
+                        <tr>
+                          <td>{{ loop.index + (page - 1) * per_page }}</td>
+                          <td>{{ doc }}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+            {% endif %}
+        </div>
+      
+      {{ pagination.links }}
+    </div>
+  </body>
+</html>
+
+<style type="text/css">
+</style>

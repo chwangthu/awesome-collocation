@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Search Engine</title>
+</head>
+<body>
+    <div class="wrap">
+        <form method="POST" action="http://localhost:5000/query">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="请输入空格分隔的关键词" name="keywords">
+                <input type="submit" class="searchButton" value="SEARCH" /><br><br>
+            </div>
+            <div class="select">
+                <label>词性:</label> 
+                <input type="checkbox" name="POS" checked="checked" value="名词">名词&nbsp;
+                <input type="checkbox" name="POS" checked="checked" value="动词">动词&nbsp;
+                <input type="checkbox" name="POS" checked="checked" value="形容词">形容词&nbsp;
+                <input type="checkbox" name="POS" checked="checked" value="副词">副词&nbsp;
+                <input type="checkbox" name="POS" checked="checked" value="数词">数词&nbsp;
+                <input type="checkbox" name="POS" checked="checked" value="人名">人名&nbsp;<br/>
+            </div>
+            <div>
+                <label>距离:</label> 
+                <input type="text" name="window_size" value="1" class="distance"/>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  background-image: url("bg.jpeg");
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 60px;
+}
+
+.select {
+  height: 30px;
+  width: 500px
+}
+
+.distance {
+  width: 80px;
+  border: 1px solid #00B4CC;
+  padding: 5px;
+  /* height: 20px; */
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
